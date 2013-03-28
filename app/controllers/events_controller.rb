@@ -14,7 +14,7 @@ class EventsController < ApplicationController
     if @event.save
       flash[:success] = "Created #{@event.name}"
     end
-    redirect_to profile
+    redirect_to profile_path
   end
 
 end
