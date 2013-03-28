@@ -3,7 +3,11 @@ App::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
+  match 'add', to: 'users#add_course'
+  match 'remove', to: 'users#remove_course'
+
   resources :users
+  resources :courses, only: [:show, :index]
   
   root to: 'pages#home'
 

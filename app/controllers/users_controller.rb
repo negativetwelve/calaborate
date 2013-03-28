@@ -45,6 +45,31 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
 
+  def add_course
+    user = User.find(params[:id])
+    course = Course.find(params[:course_id])
+    if user.courses.where(id: course.id)
+      flash[:warning] = "You have already added the course #{course.title_name}."
+      redirect_to root_url
+      return
+    end
+    user.courses << course
+    if user.save
+      flash[:success] = "Added #{course.title_name}."
+    end
+    redirect_to root_url
+  end
+
+  def remove_course
+    user = User.find(params[:id])
+    course = Course.find(params[:course_id])
+    user.courses -= [course]
+    if user.save
+      flash[:error] = "Removed #{course.title_name}."
+    end
+    redirect_to root_url
+  end
+
   private
 
     def correct_user

@@ -32,4 +32,4 @@ From there you can query the database, for example:
     u = User.first
     u.courses
 
-The first command gets all the users, the second gets all the courses. The third gets the first user on the app and the fourth line grabs all the users courses.
+The first command gets all the users, the second gets all the courses. The third gets the first user on the app and the fourth line grabs all the user's courses.

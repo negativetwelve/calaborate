@@ -1,0 +1,9 @@
+<div id="all_courses">
+  <% @courses.each do |course| %>
+    <%= link_to course.name, course %><br/>
+  <% end %>
+
+  <div class="pagination pagination-centered">
+    <%= will_paginate @courses %>
+  </div>
+</div>
