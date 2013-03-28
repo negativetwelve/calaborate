@@ -4,6 +4,6 @@ class Course < ActiveRecord::Base
   attr_accessible :name
 
   def title_name
-    name.titleize
+    name.humanize.titleize
   end
 end
