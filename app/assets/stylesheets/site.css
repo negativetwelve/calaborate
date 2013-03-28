@@ -1,0 +1,82 @@
+
+body {
+  font-family: "Source Sans Pro",sans-serif;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  
+}
+
+a {
+  color: #03B;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  clear: both;
+}
+
+ul li {
+  padding: 5px;
+}
+
+.main {
+
+}
+
+@media (max-width: 767px) {
+  .content {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+    width: 96%;
+    min-width: 0;
+    margin-top: 0;
+    padding: 2%;
+    clear: both;
+    background-color: white;
+    position: absolute;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .content {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    background-color: white;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility: visible;
+    min-height: 1000px;
+  }
+}
+
+@media (min-width: 979px) {
+  .content {
+    position: relative;
+    z-index: 10;
+    padding: 50px;
+    background-color: white;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility: visible;
+    min-height: 1000px;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.signup {
+  margin: 0;
+}

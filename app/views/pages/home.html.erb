@@ -1,0 +1,9 @@
+<% if signed_in? %>
+  <h1>You are signed in.</h1>
+  <%= link_to "Sign out!", signout_path, class: "btn btn-large btn-primary" %>
+<% else %>
+  <h1>Base App</h1>
+
+  <%= link_to "Sign up!", signup_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "Sign in!", signin_path, class: "btn btn-large btn-primary" %>
+<% end %>
