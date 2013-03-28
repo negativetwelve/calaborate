@@ -1,6 +1,6 @@
-Cal-aborate
+# Cal-aborate
 
-# Installation
+### Installation
 
     bundle install
     rake db:migrate
