@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   def add_course
     user = User.find(params[:id])
     course = Course.find(params[:course_id])
-    if user.courses.where(id: course.id)
+    if user.courses.where(id: course.id).count > 0
       flash[:warning] = "You have already added the course #{course.title_name}."
       redirect_to root_url
       return
