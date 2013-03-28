@@ -4,7 +4,6 @@ App::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
   
   root to: 'pages#home'
 
