@@ -1,0 +1,11 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: image-url("glyphicons-halflings.png");
+}
+.icon-white {
+  background-image: image-url("glyphicons-halflings-white.png");
+}
+
+.bootstrap-datetimepicker-widget dropdown-menu>ul {
+  padding: 0px;
+}

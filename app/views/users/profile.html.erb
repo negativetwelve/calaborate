@@ -1,0 +1,17 @@
+<div id="user_profile">
+  <% @user.courses.each do |course| %>
+    <h4><%= course.title_name %></h4>
+
+  <div class="course_events">
+    <% @user.events.by_course(course.id).each do |event| %>
+      <div class="user_event">
+        <h5><%= event.name %></h5>
+        Start time: <%= event.start_time.to_date %><br>
+        End time: <%= event.end_time.to_date %><br>
+        Location: <%= event.location %><br>
+        More Info: <%= event.more_info %>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>

@@ -70,6 +70,10 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
 
+  def profile
+    @user = current_user
+  end
+
   private
 
     def correct_user

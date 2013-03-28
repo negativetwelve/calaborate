@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_and_belongs_to_many :courses, :uniq => true
+  has_and_belongs_to_many :events, :uniq => true
 
   attr_accessible :name, :oauth_expires_at, :oauth_token, :provider, :uid
 

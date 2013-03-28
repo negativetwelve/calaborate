@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328093046) do
+ActiveRecord::Schema.define(:version => 20130328223040) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "courses_events", :id => false, :force => true do |t|
+    t.integer "course_id"
+    t.integer "event_id"
+  end
+
+  add_index "courses_events", ["course_id", "event_id"], :name => "index_courses_events_on_course_id_and_event_id"
+  add_index "courses_events", ["event_id", "course_id"], :name => "index_courses_events_on_event_id_and_course_id"
 
   create_table "courses_users", :id => false, :force => true do |t|
     t.integer "course_id"
@@ -26,6 +34,24 @@ ActiveRecord::Schema.define(:version => 20130328093046) do
 
   add_index "courses_users", ["course_id", "user_id"], :name => "index_courses_users_on_course_id_and_user_id"
   add_index "courses_users", ["user_id", "course_id"], :name => "index_courses_users_on_user_id_and_course_id"
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "location"
+    t.text     "more_info"
+  end
+
+  create_table "events_users", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+  end
+
+  add_index "events_users", ["event_id", "user_id"], :name => "index_events_users_on_event_id_and_user_id"
+  add_index "events_users", ["user_id", "event_id"], :name => "index_events_users_on_user_id_and_event_id"
 
   create_table "users", :force => true do |t|
     t.string   "provider"
