@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :courses
+
   attr_accessible :name, :oauth_expires_at, :oauth_token, :provider, :uid
 
   def self.from_omniauth(auth)

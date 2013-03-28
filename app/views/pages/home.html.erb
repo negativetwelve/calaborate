@@ -6,3 +6,9 @@
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
   <% end %>
 </div>
+
+<% if current_user %>
+  <div id="add_classes">
+    Add your classes!
+  </div>
+<% end %>

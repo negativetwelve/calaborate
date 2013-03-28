@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'csv'
+
+CSV.foreach("public/classes.csv") do |row|
+  row.each do |course|
+    c = Course.create(name: course.to_s)
+    puts course
+  end
+end
