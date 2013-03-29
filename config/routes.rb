@@ -9,6 +9,8 @@ App::Application.routes.draw do
   match 'settings', to: 'pages#settings'
   match 'my_events', to: 'users#profile'
   match 'attending', to: 'events#attending'
+  match 'autocomplete_courses', to: 'pages#autocomplete_courses'
+  match 'search', to: 'pages#search'
 
   match 'login', to: 'pages#login'
 

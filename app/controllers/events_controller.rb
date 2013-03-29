@@ -1,7 +1,17 @@
 class EventsController < ApplicationController
+  skip_filter :require_login, only: [:index]
 
   def index
-    @events = Event.all
+    if params[:q] && !params[:q].blank?
+      term = params[:q].split(/(\d+)/).join(' ')
+      @events = Event.search(term).paginate(page: params[:page], per_page: Event.per_page).upcoming
+      if @events.size == 0
+        flash[:error] = "Sorry, there were no results for your query '#{params[:q]}'."
+        redirect_to search_path
+      end
+    else
+      @events = Event.upcoming
+    end
   end
 
   def new
@@ -13,6 +23,11 @@ class EventsController < ApplicationController
     @user = User.find(params[:id])
     @course = Course.find(params[:course_id])
     @event = Event.new(params[:event])
+    if @event.course_name.nil?
+      @event.course_name = @course.name
+    else
+      @event.course_name += " #{@course.name}"
+    end
     @event.users << @user
     @event.courses << @course
     if @event.save

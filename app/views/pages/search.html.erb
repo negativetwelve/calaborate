@@ -1,0 +1,16 @@
+<form action="<%= events_path %>" method="get" >
+  <div class="input-append">
+    <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field" %>  
+    <%= submit_tag "Search", name: nil, class: "button secondary fixed-width-small" %>
+  </div>
+</form>
+
+<script type="text/javascript">
+
+  $('#search_field').autocomplete({
+    minLength: 2,
+    delay: 500,
+    source: '/autocomplete_courses.js'
+  });
+
+</script>

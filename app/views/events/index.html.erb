@@ -1,3 +1,77 @@
-<% @events.each do |event| %>
-  <%= event.name %> <%= link_to "I'm going!", event_attend_path(event) %> <br>
+<% @events.map(&:courses).flatten.uniq.each do |course| %>
+  <h5><%= course.title_name %></h5>
+  <div class="blue_bar"></div>
+
+  <h5>Today</h5>
+  <% @events.today.by_course(course.id).each do |event| %>
+    <div class="row">
+      <div class="large-12 columns">
+        <ul class="small-block-grid-2">
+          <li>timeline</li>
+          <li>
+            <div class="event_box">
+              <%= event.name %><br>
+              <%= event.location %><br>
+              <%= link_to "I'm going!", event_attend_path(event), class: 'button secondary tiny cal-blue fixed-width-small' %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <h5>Tomorrow</h5>
+  <% @events.tomorrow.by_course(course.id).each do |event| %>
+    <div class="row">
+      <div class="large-12 columns">
+        <ul class="small-block-grid-2">
+          <li>timeline</li>
+          <li>
+            <div class="event_box">
+              <%= event.name %><br>
+              <%= event.location %><br>
+              <%= link_to "I'm going!", event_attend_path(event), class: 'button secondary tiny cal-blue fixed-width-small' %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <h5>Later This Week</h5>
+  <% @events.this_week.by_course(course.id).each do |event| %>
+      <div class="row">
+      <div class="large-12 columns">
+        <ul class="small-block-grid-2">
+          <li>timeline</li>
+          <li>
+            <div class="event_box">
+              <%= event.name %><br>
+              <%= event.location %><br>
+              <%= link_to "I'm going!", event_attend_path(event), class: 'button secondary tiny cal-blue fixed-width-small' %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <h5>Later This Month</h5>
+  <% @events.rest_upcoming.by_course(course.id).each do |event| %>
+        <div class="row">
+      <div class="large-12 columns">
+        <ul class="small-block-grid-2">
+          <li>timeline</li>
+          <li>
+            <div class="event_box">
+              <%= event.name %><br>
+              <%= event.location %><br>
+              <%= link_to "I'm going!", event_attend_path(event), class: 'button secondary tiny cal-blue fixed-width-small' %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
 <% end %>
