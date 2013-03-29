@@ -28,6 +28,16 @@ class EventsController < ApplicationController
     else
       @event.course_name += " #{@course.name}"
     end
+    if @event.course_abbr.nil?
+      @event.course_abbr = @course.abbr
+    else
+      @event.course_abbr += " #{@course.abbr}"
+    end
+    if @event.course_short_code.nil?
+      @event.course_short_code = @course.short_code
+    else
+      @event.course_short_code += " #{@course.short_code}"
+    end
     @event.users << @user
     @event.courses << @course
     if @event.save

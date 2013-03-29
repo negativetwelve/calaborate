@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search,
-                  :against => [[:course_name, 'A'], [:name, 'B']],
+                  :against => [[:course_name, 'A'], [:name, 'A'], [:course_abbr, 'B'], [:course_short_name, 'C']],
                   :using => {:tsearch => {:prefix => true, :any_word => true, :normalization => 2}}
 
 

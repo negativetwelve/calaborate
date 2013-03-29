@@ -17,5 +17,5 @@ end
 
 csv[0].each_with_index do |full_name, index|
   puts full_name
-  c = Course.create(name: full_name.to_s, abbr: csv[1][index].to_s, short_code: full_name.scan(/(\A|\W)(\w)/).collect{|s| s[1]}.join.upcase.gsub(/[^a-zA-Z]/, ''))
+  c = Course.create(name: full_name.to_s, abbr: csv[1][index].to_s, short_code: full_name.gsub(" AND", "").scan(/(\A|\W)(\w)/).collect{|s| s[1]}.join.upcase.gsub(/[^a-zA-Z]/, ''))
 end
