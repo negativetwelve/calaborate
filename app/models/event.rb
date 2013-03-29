@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search,
                   :against => [[:course_name, 'A'], [:name, 'A'], [:course_abbr, 'B'], [:course_short_code, 'C']],
-                  :using => {:tsearch => {:prefix => true, :any_word => true, :normalization => 2}}
+                  :using => {:tsearch => {:prefix => true, :normalization => 2}}
 
 
   has_and_belongs_to_many :users, :uniq => true
