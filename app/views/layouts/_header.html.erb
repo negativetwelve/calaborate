@@ -1,14 +1,18 @@
 <header class="header">
   <ul class="breadcrumb navbar-fixed-top">
-    <li>
+      <div class="row">
+  <div class="large-12 columns">
+    <li class="">
       <%= link_to root_url do %>
       <%= image_tag('calaborate_logo.png', class: 'logo') %>
       <% end %>
     </li>
-    <li>
+    <li class="pull-right">
       <%= link_to settings_path do %>
-        <i class="icon-cog white"></i>
+        <i class="icon-cog white top-margin"></i>
       <% end %>
     </li>
+  </div>
+  </div>
   </ul>
 </header>
