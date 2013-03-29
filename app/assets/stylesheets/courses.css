@@ -39,6 +39,7 @@
 .logo {
   height: 30px;
   margin-left: 20px;
+  width: auto;
 }
 
 .blue_bar {
