@@ -1,3 +1,16 @@
+.vertical_gold_bar {
+  background-color: #F6B829;
+}
+
+.search_button {
+  height: 33px;
+}
+
+#search_field {
+  width: 70%;
+  display: inline;
+}
+
 .center {
   text-align: center;
 }
@@ -75,7 +88,7 @@ header .breadcrumb a {
 }
 
 #start {
-  padding-top: 40px;
+  //padding-top: 40px;
   text-align: center;
 }
 

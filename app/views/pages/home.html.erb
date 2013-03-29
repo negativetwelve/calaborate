@@ -1,15 +1,14 @@
 <div id="start">
-  <h4>Calaborate makes it super simple to create and search for study group on campus.</h4>
+  <h4>Calaborate makes it super simple to create and search for study groups.</h4>
   <%= image_tag("logo_large.png") %><br>
   <h4>I want to...</h4>
-  <h4>Search by Class or Event Name</h4>
   <form action="<%= events_path %>" method="get" >
     <div class="input-append">
-      <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field" %>  
-      <%= submit_tag "Search", name: nil, class: "button secondary cal-blue fixed-width" %>
+      <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field", placeholder: "Search by class or event (i.e, CS170)" %>  
+      <%= submit_tag "Search", name: nil, class: 'btn search_button' %>
     </div>
   </form>
-  <br>
+  <h4>OR</h4>
   <%= link_to 'Post Event', new_event_path, class: "button secondary cal-gold fixed-width" %>
 
 </div>

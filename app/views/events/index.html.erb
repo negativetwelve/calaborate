@@ -1,8 +1,8 @@
 <h4>Search by Class or Event Name</h4>
   <form action="<%= events_path %>" method="get" >
     <div class="input-append">
-      <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field" %>  
-      <center><%= submit_tag "Search", name: nil, class: "button secondary cal-blue fixed-width" %></center>
+      <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field", placeholder: "Search by class or event (i.e, CS170)" %>  
+      <%= submit_tag "Search", name: nil, class: 'btn search_button' %>
     </div>
   </form>
   <br>

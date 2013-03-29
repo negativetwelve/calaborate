@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :courses, :uniq => true
 
   has_many :rsvps
+  has_many :attending, through: :rsvps, source: :user
 
   validates_presence_of :name, :start_time, :end_time, :location
 
