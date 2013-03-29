@@ -1,0 +1,12 @@
+<% if current_user %>
+  Signed in as <strong><%= current_user.name %></strong>!
+  <%= link_to "Log out", logout_path, id: "log_out" %>
+<% else %>
+  <div id="welcome">
+    <h2>Welcome to Calaborate!</h2>
+    <%= image_tag("logo_large.png") %><br>
+    <%= link_to "/auth/facebook", id: "sign_in" do %>
+      <%= image_tag("fbconnect.png") %>
+    <% end %>
+  </div>
+<% end %>

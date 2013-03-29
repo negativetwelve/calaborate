@@ -1,3 +1,5 @@
+<h2>Settings</h2>
+
 <div id="add_courses">
   <h4>Add your courses!</h4>
 
@@ -10,7 +12,7 @@
 </div>
 
 <div id="user_courses">
-  <h4>Your current courses:</h4>
+  <h4>My current courses:</h4>
 
   <table class="table">
     <tr>
@@ -19,20 +21,13 @@
     </tr>
     <% current_user.courses.each do |course| %>
     <tr>
-      <td><%= link_to course.title_name, course %></td>
+      <td><%= course.title_name %></td>
       <td><%= link_to 'remove', :controller => :users, :action => :remove_course, id: current_user.id, course_id: course.id %></td>
     </tr>
     <% end %>
   </table>
 </div>
 
-<div id="user_events">
-  <h4>Events you own</h4>
-  <% current_user.events.each do |event| %>
-  <div class="user_event">
-    <%= event.name %>
-    <%= event.start_time_formatted %>
-    <%= event.end_time_formatted %>
-  </div>
-  <% end %>
-</div>
+<center><%= link_to "Events I've Created", my_events_path, class: 'button secondary cal-blue fixed-width' %></center>
+<center><%= link_to "Events I'm Attending", attending_path, class: 'button secondary cal-gold fixed-width' %></center>
+<center><%= link_to "Logout", logout_path, class: 'button secondary cal-blue fixed-width' %></center>

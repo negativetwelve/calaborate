@@ -1,16 +1,14 @@
-<div id="user_profile">
-  <h4>My Events</h4>
-  <% if @user.courses.size == 0 %>
-    <h5>You haven't added any courses. Add some <%= link_to 'here.', '/add_courses' %></h5>
-  <% end %>
-
+<div id="user_attending">
+  <h4>Events I'm Attending</h4>
 
   <% @user.courses.each do |course| %>
     <h5><%= course.title_name %></h5>
     <div class="blue_bar"></div>
 
   <div class="course_events">
-    <% @user.events.by_course(course.id).each do |event| %>
+    <% @user.rsvps.attending.each do |rsvp| %>
+      <% event = rsvp.event %>
+      <% if event.courses.where(id: course.id).size > 0 %>
       <div class="row">
         <div class="large-12 columns">
           <ul class="small-block-grid-2">
@@ -27,6 +25,7 @@
           </ul>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
   <% end %>

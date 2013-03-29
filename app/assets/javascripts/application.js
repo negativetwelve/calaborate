@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require jquery-ui
 //= require bootstrap-datetimepicker
 //= require bootstrap
 //= require_tree .
 
+
+$(document).foundation();

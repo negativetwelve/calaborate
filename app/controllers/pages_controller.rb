@@ -1,9 +1,7 @@
 class PagesController < ApplicationController
+  skip_before_filter :require_login, :except => [:settings]
 
   def home
-    if signed_in?
-
-    end
   end
 
   def start
@@ -11,6 +9,9 @@ class PagesController < ApplicationController
 
   def settings
     @courses = Course.all
+  end
+
+  def login
   end
   
 end

@@ -14,7 +14,15 @@ class Event < ActiveRecord::Base
         }
 
   def start_time_formatted
-    start_time.strftime("%a, %b, %d at %l:%M %p")
+    start_time.strftime("%a %b %d")
+  end
+
+  def start_formatted_time
+    start_time.strftime("%l:%M%P")
+  end
+
+  def end_formatted_time
+    end_time.strftime("%l:%M%P")
   end
 
   def end_time_formatted

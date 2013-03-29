@@ -16,5 +16,8 @@
  *= require main
  *= require site
  *= require bootstrap_overrides
+ *= require font-awesome
+ *= require foundation
  *= require courses
  */
+ *= require foundation_and_overrides

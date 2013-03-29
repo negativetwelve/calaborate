@@ -1,3 +1,69 @@
+#welcome {
+  text-align: center;
+}
+
+#new_event_form {
+}
+
+#error_messages {
+  padding-top: 80px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.blue_bar {
+  background-color: #1C92F4;
+  height: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.button.secondary.cal-blue {
+  background-color: #1C92F4;
+  border-color: #1C92F4;
+  color: white;
+  font-weight: normal;
+}
+
+.pseudobutton {
+  -webkit-appearance: none;
+}
+
+.button.secondary.fixed-width {
+  width: 200px;
+}
+
+.button.secondary.fixed-width-small {
+  width: 120px;
+}
+
+.button.secondary.cal-gold {
+  background-color: #F6B829;
+  border-color: #F6B829;
+  color: white;
+  font-weight: normal;
+}
+
+header .breadcrumb {
+  background-color: #1C92F4;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  text-align: center;
+}
+
+header .breadcrumb a {
+  color: white;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+#start {
+  padding-top: 40px;
+  text-align: center;
+}
 
 .select_course_box {
   width: 270px;
@@ -8,7 +74,6 @@
 }
 
 .bootstrap-datetimepicker-widget {
-  left: 50px !important;
 }
 
 .bootstrap-datetimepicker-widget>ul {
@@ -17,4 +82,35 @@
 
 li.collapse {
   padding: 0px;
+}
+
+#event_start_time, #event_end_time {
+  display: inline;
+  width: 200px;
+}
+
+.input-append span.add-on {
+  font-size: 14px;
+  height: 33px;
+}
+
+.select_course_box {
+  margin: 0 0 1em 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"], 
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  font-size: 14px;
 }

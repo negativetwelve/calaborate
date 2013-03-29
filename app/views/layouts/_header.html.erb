@@ -1,13 +1,9 @@
 <header class="header">
-  <ul class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li><%= link_to "All Events", events_path %></li>
-    <!--
-    <li><%= link_to 'Courses', courses_path %></li>
-    -->
-    <% if current_user %>
-      <li><%= link_to 'My Events', profile_path %></li>
-      <li><%= link_to 'Settings', settings_path %></li>
-    <% end %>
+  <ul class="breadcrumb navbar-fixed-top">
+    <li>
+      <%= link_to root_url do %>
+      <%= image_tag('calaborate_logo.png', class: 'logo') %>
+      <% end %>
+    </li>
   </ul>
 </header>

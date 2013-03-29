@@ -11,6 +11,8 @@ gem 'passenger', '3.0.18'
 gem 'omniauth-facebook'
 gem 'jquery-timepicker-rails'
 gem 'bootstrap-datetimepicker-rails'
+gem 'zurb-foundation', '~> 4.0.0'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

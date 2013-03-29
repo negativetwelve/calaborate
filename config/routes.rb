@@ -1,13 +1,16 @@
 App::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
-  match 'signout', to: 'sessions#destroy', as: 'signout'
+  match 'logout', to: 'sessions#destroy', as: 'logout'
 
   match 'add', to: 'users#add_course'
   match 'remove', to: 'users#remove_course'
 
   match 'settings', to: 'pages#settings'
-  match 'profile', to: 'users#profile'
+  match 'my_events', to: 'users#profile'
+  match 'attending', to: 'events#attending'
+
+  match 'login', to: 'pages#login'
 
   resources :users
   resources :courses, only: [:show, :index]

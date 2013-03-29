@@ -78,6 +78,8 @@ GEM
       multipart-post (~> 1.1)
     fastthread (1.0.7)
     ffi (1.1.5)
+    font-awesome-rails (3.0.2.0)
+      railties (>= 3.1)
     gherkin (2.11.2)
       json (>= 1.4.6)
     guard (1.3.3)
@@ -203,6 +205,8 @@ GEM
     will_paginate (3.0.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
+    zurb-foundation (4.0.9)
+      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -218,6 +222,7 @@ DEPENDENCIES
   database_cleaner (= 0.7.0)
   factory_girl_rails (= 4.1.0)
   faker (= 1.0.1)
+  font-awesome-rails
   guard-rspec (= 1.2.1)
   guard-spork (= 1.2.0)
   jquery-rails (= 2.0.2)
@@ -232,3 +237,4 @@ DEPENDENCIES
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
   will_paginate (= 3.0.3)
+  zurb-foundation (~> 4.0.0)
