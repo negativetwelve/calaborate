@@ -41,11 +41,6 @@
 
 <script type="text/javascript">
   $(function() {
-    val1 = $("#event_start_time")[0].value;
-    $("#event_start_time")[0].value = val1.substring(0, val1.length - 7);
-    val2 = $("#event_end_time")[0].value;
-    $("#event_end_time")[0].value = val2.substring(0, val2.length - 7);
-
     $('#datetimepicker1').datetimepicker({ pick12HourFormat: true });
     $('#datetimepicker2').datetimepicker({ pick12HourFormat: true });
   });
