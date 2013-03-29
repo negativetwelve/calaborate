@@ -1,3 +1,7 @@
+.center {
+  text-align: center;
+}
+
 .event_box {
   border: 2px solid #1C92F4;
   border-top: 5px solid #1C92F4;
@@ -41,6 +45,10 @@
   width: 200px;
 }
 
+.button.secondary.fixed-width-medium {
+  width: 150px;
+}
+
 .button.secondary.fixed-width-small {
   width: 120px;
 }
@@ -80,6 +88,7 @@ header .breadcrumb a {
 }
 
 .bootstrap-datetimepicker-widget {
+  margin-left: -200px;
 }
 
 .bootstrap-datetimepicker-widget>ul {

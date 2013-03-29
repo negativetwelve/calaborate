@@ -3,11 +3,19 @@ class EventsController < ApplicationController
 
   def index
     if params[:q] && !params[:q].blank?
-      term = params[:q].split(/(\d+)/).join(' ')
-      @events = Event.search(term).paginate(page: params[:page], per_page: Event.per_page).upcoming
+      term = params[:q].split(/(\d+)/)
+      check = ""
+      term.each do |t|
+        if t.to_i != 0
+          check += " " + t
+        else
+          check += t
+        end
+      end
+      @events = Event.search(check).paginate(page: params[:page], per_page: Event.per_page).upcoming
       if @events.size == 0
         flash[:error] = "Sorry, there were no results for your query '#{params[:q]}'."
-        redirect_to search_path
+        redirect_to root_url
       end
     else
       @events = Event.upcoming

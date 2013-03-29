@@ -4,13 +4,10 @@
   <h4>Add your courses!</h4>
 
   <%= form_for current_user, :url => {:controller => "users", :action => "add_course"} do |f| %>
-  <!--
-    <%= select_tag :course_id, options_from_collection_for_select(@courses, :id, :title_name), :class => 'select_course_box' %>
-  -->
     <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field" %>  
     <%= hidden_field_tag :id, current_user.id %>
     <br>
-    <%= submit_tag 'Add Course', class: 'button secondary cal-blue fixed-width' %>
+    <center><%= submit_tag 'Add Course', class: 'button secondary cal-blue fixed-width' %></center>
   <% end %>
 
 </div>
@@ -32,13 +29,15 @@
   </table>
 </div>
 
-<center><%= link_to "Events I've Created", my_events_path, class: 'button secondary cal-blue fixed-width' %></center>
-<center><%= link_to "Events I'm Attending", attending_path, class: 'button secondary cal-gold fixed-width' %></center>
-<center><%= link_to "Create Event", new_event_path, class: 'button secondary cal-blue fixed-width' %></center>
-<center><%= link_to "Search Events", search_path, class: 'button secondary cal-gold fixed-width' %></center>
-
-<center><%= link_to "Logout", logout_path, class: 'button secondary cal-blue fixed-width' %></center>
-
+<div class="row">
+  <div class="large-12 columns center">
+      <%= link_to "Events I've Created", my_events_path, class: 'button secondary cal-blue fixed-width' %><br>
+      <%= link_to "Events I'm Attending", attending_path, class: 'button secondary cal-gold fixed-width' %><br>
+      <%= link_to "Create Event", new_event_path, class: 'button secondary cal-blue fixed-width' %><br>
+      <%= link_to "Logout", logout_path, class: 'button secondary cal-gold fixed-width' %><br>
+    </ul>
+  </div>
+</div>
 
 <script type="text/javascript">
 
