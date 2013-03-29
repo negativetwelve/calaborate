@@ -15,10 +15,10 @@ class Event < ActiveRecord::Base
   attr_accessible :end_time, :name, :start_time, :more_info, :location
 
   scope :upcoming, where('start_time > ?', DateTime.now - 7.hours)
-  scope :today, where('start_time BETWEEN ? AND ?', DateTime.now.beginning_of_day - 7.hours, DateTime.now.end_of_day - 7.hours)
-  scope :tomorrow, where('start_time BETWEEN ? AND ?', DateTime.now.beginning_of_day - 7.hours + 1.day, DateTime.now.end_of_day - 7.hours + 1.day)
-  scope :this_week, where('start_time BETWEEN ? AND ?', DateTime.now.beginning_of_day - 7.hours + 2.days, DateTime.now.end_of_day - 7.hours + 7.days)
-  scope :rest_upcoming, where('start_time > ?', DateTime.now.end_of_day - 7.hours + 7.days)
+  scope :today, where('start_time BETWEEN ? AND ?', DateTime.now.beginning_of_day - 7.hours, DateTime.now.end_of_day - 7.hours).order(:start_time)
+  scope :tomorrow, where('start_time BETWEEN ? AND ?', DateTime.now.beginning_of_day - 7.hours + 1.day, DateTime.now.end_of_day - 7.hours + 1.day).order(:start_time)
+  scope :this_week, where('start_time BETWEEN ? AND ?', DateTime.now.beginning_of_day - 7.hours + 2.days, DateTime.now.end_of_day - 7.hours + 7.days).order(:start_time)
+  scope :rest_upcoming, where('start_time > ?', DateTime.now.end_of_day - 7.hours + 7.days).order(:start_time)
 
   scope :by_course, lambda { |course_id| 
           joins(:courses).

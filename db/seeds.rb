@@ -8,9 +8,14 @@
 
 require 'csv'
 
+csv = {}
+counter = 0
 CSV.foreach("public/classes.csv") do |row|
-  row.each do |course|
-    c = Course.create(name: course.to_s)
-    puts course
-  end
+  csv[counter] = row
+  counter = counter + 1
+end
+
+csv[0].each_with_index do |full_name, index|
+  puts full_name
+  c = Course.create(name: full_name.to_s, abbr: csv[1][index].to_s, short_code: full_name.scan(/(\A|\W)(\w)/).collect{|s| s[1]}.join.upcase.gsub(/[^a-zA-Z]/, ''))
 end

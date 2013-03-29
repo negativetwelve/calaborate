@@ -16,7 +16,16 @@ class PagesController < ApplicationController
 
   def autocomplete_courses
     if params[:term]
-      @courses = Course.where("lower(name) LIKE ?", params[:term].downcase + "%").map(&:name).compact.reject(&:blank?)
+      term = params[:term].split(/(\d+)/)
+      check = ""
+      term.each do |t|
+        if t.to_i != 0
+          check += " " + t
+        else
+          check += t
+        end
+      end
+      @courses = Course.search(check).map(&:name).compact.reject(&:blank?)
     else
       @courses = Course.all.map(&:name).compact.reject(&:blank?)
     end
