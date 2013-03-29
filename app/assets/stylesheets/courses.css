@@ -1,9 +1,13 @@
+.white {
+  color: white;
+}
+
 .vertical_gold_bar {
   background-color: #F6B829;
 }
 
 .search_button {
-  height: 33px;
+  height: 32px;
 }
 
 #search_field {
@@ -34,6 +38,7 @@
 
 .logo {
   height: 30px;
+  margin-left: 20px;
 }
 
 .blue_bar {
