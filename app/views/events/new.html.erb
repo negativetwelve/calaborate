@@ -5,10 +5,10 @@
 
   <%= f.label :course %>
   <%= select_tag :course_id, options_from_collection_for_select(@courses, :id, :title_name), :class => 'select_course_box' %>
-  
+
   <%= f.label :start_time, 'Starts At' %>
   <div id="datetimepicker1" class="input-append date">
-    <%= f.text_field :start_time, data: {format: "yyyy/MM/dd hh:mm:ss"} %>
+    <%= f.text_field :start_time, data: {format: "yyyy/MM/dd hh:mm:ss"}, disabled: true %>
     <span class="add-on">
       <i data-time-icon="icon-time" data-date-icon="icon-calendar">
       </i>
@@ -17,7 +17,7 @@
 
   <%= f.label :end_time, 'Ends At' %>
   <div id="datetimepicker2" class="input-append date">
-    <%= f.text_field :end_time, data: {format: "yyyy/MM/dd hh:mm:ss"} %>
+    <%= f.text_field :end_time, data: {format: "yyyy/MM/dd hh:mm:ss"}, disabled: true %>
     <span class="add-on">
       <i data-time-icon="icon-time" data-date-icon="icon-calendar">
       </i>
@@ -42,4 +42,10 @@
     $('#datetimepicker1').datetimepicker({ pick12HourFormat: true });
     $('#datetimepicker2').datetimepicker({ pick12HourFormat: true });
   });
+
+  $("td.day").click(function() {
+    console.log('clicked');
+    $(".bootstrap-datetimepicker-widget").hide();
+  });
+  
 </script>

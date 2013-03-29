@@ -1,0 +1,3 @@
+<% @events.each do |event| %>
+  <%= event.name %> <%= link_to "I'm going!", event_attend_path(event) %> <br>
+<% end %>

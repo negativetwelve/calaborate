@@ -1,8 +1,12 @@
 class EventsController < ApplicationController
 
+  def index
+    @events = Event.all
+  end
+
   def new
     @event = Event.new
-    @courses = Course.all
+    @courses = current_user.courses
   end
 
   def create
@@ -13,8 +17,11 @@ class EventsController < ApplicationController
     @event.courses << @course
     if @event.save
       flash[:success] = "Created #{@event.name}"
+      redirect_to profile_path
+    else
+      @courses = current_user.courses
+      render 'new'
     end
-    redirect_to profile_path
   end
 
 end

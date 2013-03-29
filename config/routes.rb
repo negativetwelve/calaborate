@@ -6,12 +6,16 @@ App::Application.routes.draw do
   match 'add', to: 'users#add_course'
   match 'remove', to: 'users#remove_course'
 
-  match 'start', to: 'pages#start'
+  match 'settings', to: 'pages#settings'
   match 'profile', to: 'users#profile'
 
   resources :users
   resources :courses, only: [:show, :index]
-  resources :events
+  resources :events do
+    match 'attend', to: 'rsvps#attend'
+    match 'maybe', to: 'rsvps#maybe'
+    match 'decline', to: 'rsvps#decline'
+  end
   
   root to: 'pages#home'
 

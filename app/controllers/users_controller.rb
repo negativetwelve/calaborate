@@ -50,14 +50,14 @@ class UsersController < ApplicationController
     course = Course.find(params[:course_id])
     if user.courses.where(id: course.id).count > 0
       flash[:warning] = "You have already added the course #{course.title_name}."
-      redirect_to root_url
+      redirect_to settings_path
       return
     end
     user.courses << course
     if user.save
       flash[:success] = "Added #{course.title_name}."
     end
-    redirect_to root_url
+    redirect_to settings_path
   end
 
   def remove_course
@@ -67,7 +67,7 @@ class UsersController < ApplicationController
     if user.save
       flash[:error] = "Removed #{course.title_name}."
     end
-    redirect_to root_url
+    redirect_to settings_path
   end
 
   def profile

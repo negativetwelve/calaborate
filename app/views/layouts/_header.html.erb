@@ -1,7 +1,13 @@
 <header class="header">
   <ul class="breadcrumb">
     <li><a href="/">Home</a></li>
+    <li><%= link_to "All Events", events_path %></li>
+    <!--
     <li><%= link_to 'Courses', courses_path %></li>
-    <li><%= link_to 'My Events', profile_path %></li>
+    -->
+    <% if current_user %>
+      <li><%= link_to 'My Events', profile_path %></li>
+      <li><%= link_to 'Settings', settings_path %></li>
+    <% end %>
   </ul>
 </header>

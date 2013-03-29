@@ -12,9 +12,9 @@
  *= require bootstrap-responsive
  *= require bootstrap
  *= require normalize
- *= require courses
  *= require bootstrap-datetimepicker
  *= require main
  *= require site
  *= require bootstrap_overrides
+ *= require courses
  */

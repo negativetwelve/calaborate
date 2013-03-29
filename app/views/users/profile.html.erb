@@ -1,17 +1,37 @@
 <div id="user_profile">
   <% @user.courses.each do |course| %>
-    <h4><%= course.title_name %></h4>
+    <h2><%= course.title_name %></h2>
 
   <div class="course_events">
     <% @user.events.by_course(course.id).each do |event| %>
       <div class="user_event">
-        <h5><%= event.name %></h5>
-        Start time: <%= event.start_time.to_date %><br>
-        End time: <%= event.end_time.to_date %><br>
+        <h3><%= event.name %></h3>
+        Start time: <%= event.start_time_formatted %><br>
+        End time: <%= event.end_time_formatted %><br>
         Location: <%= event.location %><br>
         More Info: <%= event.more_info %>
       </div>
     <% end %>
   </div>
+  <% end %>
+
+  <h4>Events you own</h4>
+  <% current_user.events.each do |event| %>
+  <div class="user_event">
+    <%= event.name %>
+    <%= event.start_time_formatted %>
+    <%= event.end_time_formatted %>
+  </div>
+  <% end %>
+
+  <h4>Events you have RSVP'd</h4>
+  <h4>Attending</h4>
+  <% current_user.rsvps.attending.each do |rsvp| %>
+    <%= rsvp.event.name %> <%= link_to "Change RSVP to 'Maybe'", event_maybe_path(rsvp.event) %> <br>
+  <% end %>
+
+  <h4>Possibly Attending</h4>
+  <% current_user.rsvps.maybe_attending.each do |rsvp| %>
+    <%= rsvp.event.name %><br>
   <% end %>
 </div>

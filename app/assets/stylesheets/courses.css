@@ -7,6 +7,10 @@
   background: #bbb;
 }
 
+.bootstrap-datetimepicker-widget {
+  left: 50px !important;
+}
+
 .bootstrap-datetimepicker-widget>ul {
   padding: 0px;
 }
