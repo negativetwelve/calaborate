@@ -17,6 +17,7 @@
               <%= event.start_time_formatted %><br>
               <%= event.start_formatted_time %>-<%= event.end_formatted_time %><br>
               <%= event.location %><br>
+              <%= event.attending.count %> Attending<br>
             </li>
             <li>
               <%= link_to 'Edit', edit_event_path(event), class: 'button small secondary cal-blue fixed-width-small' %><br>

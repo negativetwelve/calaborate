@@ -1,3 +1,7 @@
+.event_li_box {
+  vertical-align: top;
+}
+
 .top-margin {
   margin-top: 7px;
 }
@@ -8,6 +12,9 @@
 
 .vertical_gold_bar {
   background-color: #F6B829;
+  height: 75px;
+  width: 5px;
+  display: inline-block;
 }
 
 .search_button {

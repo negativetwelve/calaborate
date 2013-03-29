@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="large-12 columns">
+    <ul class="small-block-grid-2">
+      <li class="event_li_box">
+        <div class="vertical_gold_bar"></div>
+        <%= event.start_formatted_time %>
+      </li>
+      <li>
+        <div class="event_box">
+          <%= event.name %><br>
+          <%= event.location %><br>
+          <%= event.attending.count %> Attending<br>
+          <%= link_to "I'm going!", event_attend_path(event), class: 'button secondary tiny cal-blue fixed-width-small' %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
