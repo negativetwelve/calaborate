@@ -47,7 +47,14 @@ class UsersController < ApplicationController
 
   def add_course
     user = User.find(params[:id])
-    course = Course.search(params[:q]).first
+    courses = Course.search(params[:q])
+    if courses.size > 0
+      course = courses.first
+    else
+      flash[:error] = "Invalid course #{params[:q]}."
+      redirect_to settings_path
+      return
+    end
     if user.courses.where(id: course.id).count > 0
       flash[:warning] = "You have already added the course #{course.title_name}."
       redirect_to settings_path
