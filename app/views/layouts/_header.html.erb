@@ -2,11 +2,13 @@
   <ul class="breadcrumb navbar-fixed-top">
       <div class="row">
   <div class="large-12 columns">
-    <li class="pull-left">
-      <%= link_to root_url do %>
-        <i class="icon-home icon-2x white"></i>
+    <% if current_user %>
+      <li class="pull-left">
+        <%= link_to root_url do %>
+          <i class="icon-home icon-2x white"></i>
+        <% end %>
+      </li>
       <% end %>
-    </li>
     <li>
       <%= link_to root_url do %>
       <%= image_tag('calaborate_logo.png', class: 'logo') %>
@@ -18,6 +20,8 @@
           <i class="icon-cog icon-2x white"></i>
         <% end %>
       </li>
+    <% else %>
+
     <% end %>
   </div>
   </div>
