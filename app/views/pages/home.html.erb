@@ -1,15 +1,33 @@
 <div id="start">
   <h4>Calaborate makes it super simple to create and search for study groups.</h4>
   <%= image_tag("logo_large.png") %><br>
-  <h4>I want to...</h4>
-  <form action="<%= events_path %>" method="get" >
-    <div class="input-append">
-      <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field", placeholder: "Search by class or event (i.e, CS170)" %>  
-      <%= submit_tag "Search", name: nil, class: 'btn search_button' %>
+
+  <% if current_user %>
+
+    <h4>I want to...</h4>
+    <div class="row">
+      <div class="large-12 columns center">
+          <%= link_to "Suggested Events", suggested_path, class: 'button secondary cal-blue fixed-width' %><br>
+          <%= link_to 'Create Event', new_event_path, class: "button secondary cal-gold fixed-width" %><br>
+          <%= link_to "Events I've Created", my_events_path, class: 'button secondary cal-blue fixed-width' %><br>
+          <%= link_to "Events I'm Attending", attending_path, class: 'button secondary cal-gold fixed-width' %><br>
+        </ul>
+      </div>
     </div>
-  </form>
-  <h4>OR</h4>
-  <%= link_to 'Post Event', new_event_path, class: "button secondary cal-gold fixed-width" %>
+
+    <form action="<%= events_path %>" method="get" >
+      <div class="input-append">
+        <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field", placeholder: "Search by class or event (i.e, CS170)" %>  
+        <%= submit_tag "Search", name: nil, class: 'btn search_button' %>
+      </div>
+    </form>
+    <% else %>
+
+    <%= link_to "/auth/facebook", id: "sign_in" do %>
+      <%= image_tag("fbconnect.png") %>
+    <% end %>
+
+    <% end %>
 
 </div>
 

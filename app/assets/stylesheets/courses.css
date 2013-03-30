@@ -1,3 +1,11 @@
+.gray_text {
+  color: #888888;
+}
+
+form {
+  margin: 0;
+}
+
 .event_li_box {
   vertical-align: top;
 }

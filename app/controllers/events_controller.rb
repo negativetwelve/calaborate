@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_filter :require_login, only: [:index]
+  skip_filter :require_login, only: []
 
   def index
     if params[:q] && !params[:q].blank?
@@ -53,9 +53,12 @@ class EventsController < ApplicationController
       if @rsvp.save
         flash[:success] = "Created #{@event.name}."
         redirect_to my_events_path
+      else
+        flash[:error] = "Failed to create event. #{@rsvp.errors.full_messages.to_sentence.humanize}."
+        redirect_to new_event_path
       end
     else
-      flash[:error] = "Failed to create event. #{@event.errors.full_messages.to_sentence.humanize} #{@rsvp.errors.full_messages.to_sentence.humanize}"
+      flash[:error] = "Failed to create event. #{@event.errors.full_messages.to_sentence.humanize}."
       redirect_to new_event_path
     end
   end

@@ -1,0 +1,26 @@
+<h4>Suggested Events</h4>
+<% @courses.each do |course| %>
+  <h5><%= course.title_name %></h5>
+  <div class="blue_bar"></div>
+
+  <h5 class="gray_text">Today</h5>
+  <% @events[course.id].today.each do |event| %>
+    <%= render 'events/event', event: event %>
+  <% end %>
+
+  <h5 class="gray_text">Tomorrow</h5>
+  <% @events[course.id].tomorrow.each do |event| %>
+    <%= render 'events/event', event: event %>
+  <% end %>
+
+  <h5 class="gray_text">Later This Week</h5>
+  <% @events[course.id].this_week.each do |event| %>
+    <%= render 'events/event', event: event %>
+  <% end %>
+
+  <h5 class="gray_text">Later This Month</h5>
+  <% @events[course.id].rest_upcoming.each do |event| %>
+    <%= render 'events/event', event: event %>
+  <% end %>
+
+<% end %>

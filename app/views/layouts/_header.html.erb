@@ -7,11 +7,13 @@
       <%= image_tag('calaborate_logo.png', class: 'logo') %>
       <% end %>
     </li>
-    <li class="pull-right">
-      <%= link_to settings_path do %>
-        <i class="icon-cog white top-margin"></i>
-      <% end %>
-    </li>
+    <% if current_user %>
+      <li class="pull-right">
+        <%= link_to settings_path do %>
+          <i class="icon-cog white top-margin"></i>
+        <% end %>
+      </li>
+    <% end %>
   </div>
   </div>
   </ul>

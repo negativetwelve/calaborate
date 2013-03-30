@@ -12,7 +12,7 @@ App::Application.routes.draw do
   match 'autocomplete_courses', to: 'pages#autocomplete_courses'
   match 'search', to: 'pages#search'
 
-  match 'login', to: 'pages#login'
+  match 'suggested', to: 'pages#suggested'
 
   resources :users
   resources :courses, only: [:show, :index]

@@ -39,5 +39,14 @@ class PagesController < ApplicationController
   def search
 
   end
+
+  def suggested
+    @user = current_user
+    @courses = current_user.courses
+    @events = {}
+    @courses.each do |course|
+      @events[course.id] = course.events
+    end
+  end
   
 end
