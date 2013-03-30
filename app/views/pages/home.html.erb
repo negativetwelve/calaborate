@@ -2,16 +2,18 @@
   <% if current_user %>
 
     <h4><%= image_tag("logo_large.png", size: '75x75') %></h4>
+    <h4>View my...</h4>
     <div class="row">
       <div class="large-12 columns center">
-          <%= link_to "Suggested Events", suggested_path, class: 'button secondary cal-blue fixed-width' %><br>
-          <%= link_to 'Create Event', new_event_path, class: "button secondary cal-gold fixed-width" %><br>
-          <%= link_to "Events I've Created", my_events_path, class: 'button secondary cal-blue fixed-width' %><br>
-          <%= link_to "Events I'm Attending", attending_path, class: 'button secondary cal-gold fixed-width' %><br>
+          <%= link_to "Courses' Events", suggested_path, class: 'button secondary cal-blue fixed-width' %><br>
+          <%= link_to "Created Events", my_events_path, class: 'button secondary cal-gold fixed-width' %><br>
+          <%= link_to "RSVP'd Events", attending_path, class: 'button secondary cal-blue fixed-width' %><br>
         </ul>
       </div>
     </div>
 
+    <h4>I want to...</h4>
+    <%= link_to 'Create an Event', new_event_path, class: "button secondary cal-gold fixed-width" %><br>
     <form action="<%= events_path %>" method="get" >
       <div class="input-append">
         <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field", placeholder: "Search by class or event" %>  
