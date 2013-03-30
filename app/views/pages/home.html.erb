@@ -1,10 +1,7 @@
 <div id="start">
-  <h4>Calaborate makes it super simple to create and search for study groups.</h4>
-  <%= image_tag("logo_large.png") %><br>
-
   <% if current_user %>
 
-    <h4>I want to...</h4>
+    <h4><%= image_tag("logo_large.png", size: '50x50') %> I want to...</h4>
     <div class="row">
       <div class="large-12 columns center">
           <%= link_to "Suggested Events", suggested_path, class: 'button secondary cal-blue fixed-width' %><br>
@@ -22,7 +19,7 @@
       </div>
     </form>
     <% else %>
-
+    <%= image_tag("logo_large.png", size: '200x200') %><br>
     <%= link_to "/auth/facebook", id: "sign_in" do %>
       <%= image_tag("fbconnect.png") %>
     <% end %>
