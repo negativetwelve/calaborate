@@ -29,8 +29,12 @@ form {
   display: inline-block;
 }
 
-.search_button {
+.button.secondary.cal-blue.search_button {
   height: 32px;
+  line-height: 0.5;
+  -webkit-border-radius: 0px 0 0 0px;
+  -moz-border-radius: 0px 0 0 0px;
+  border-radius: 0px 0 0 0px;
 }
 
 #search_field {
