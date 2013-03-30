@@ -20,8 +20,11 @@
               <%= event.attending.count %> Attending<br>
             </li>
             <li>
-              <%= link_to 'Edit', edit_event_path(event), class: 'button small secondary cal-blue fixed-width-small' %><br>
-              <%= link_to 'Send Update', edit_event_path(event), class: 'button small secondary cal-blue fixed-width-small' %><br>
+              <% if current_user.rsvps.pluck(:event_id).include?(event.id) %>
+                <%= button_to "You're going!", event_attend_path(event), disabled: true, class: 'button secondary tiny cal-blue fixed-width-small' %>
+              <% else %>
+                <%= link_to "I'm going!", event_attend_path(event), class: 'button secondary tiny cal-blue fixed-width-small' %>
+              <% end %>
             </li>
           </ul>
         </div>

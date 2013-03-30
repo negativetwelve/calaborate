@@ -1,3 +1,7 @@
+.gold_text {
+  color: #F6B829; 
+}
+
 .gray_text {
   color: #888888;
 }
@@ -165,4 +169,9 @@ input[type="time"],
 input[type="url"],
 textarea {
   font-size: 14px;
+}
+
+button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
+  background-color: #1C92F4;
+  color: white;
 }
