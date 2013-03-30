@@ -48,5 +48,9 @@ class PagesController < ApplicationController
       @events[course.id] = course.events
     end
   end
+
+  def coming_soon
+
+  end
   
 end

@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
-    redirect_to settings_path
+    if user.courses.count > 0
+      redirect_to root_url
+    else
+      redirect_to settings_path
+    end
   end
 
   def destroy

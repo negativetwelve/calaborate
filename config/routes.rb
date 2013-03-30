@@ -11,6 +11,7 @@ App::Application.routes.draw do
   match 'attending', to: 'events#attending'
   match 'autocomplete_courses', to: 'pages#autocomplete_courses'
   match 'search', to: 'pages#search'
+  match 'coming_soon', to: 'pages#coming_soon'
 
   match 'suggested', to: 'pages#suggested'
 
