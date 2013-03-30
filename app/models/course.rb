@@ -7,6 +7,8 @@ class Course < ActiveRecord::Base
                   :against => [[:name, 'A'], [:abbr, 'A'], [:short_code, 'C']],
                   :using => {:tsearch => {:prefix => true, :normalization => 2}}
 
+  scope :ordered, order(:name)
+
   attr_accessible :name, :abbr, :short_code
 
   def title_name

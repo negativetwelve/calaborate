@@ -6,9 +6,7 @@
     <div class="blue_bar"></div>
 
   <div class="course_events">
-    <% @user.rsvps.attending.each do |rsvp| %>
-      <% event = rsvp.event %>
-      <% if event.courses.where(id: course.id).size > 0 %>
+    <% @events[course.id].sort! { |a,b| a.start_time <=> b.start_time }.each do |event| %>
       <div class="row">
         <div class="large-12 columns">
           <ul class="small-block-grid-2">
@@ -29,7 +27,6 @@
           </ul>
         </div>
       </div>
-      <% end %>
     <% end %>
   </div>
   <% end %>

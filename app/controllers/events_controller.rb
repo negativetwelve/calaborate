@@ -80,6 +80,18 @@ class EventsController < ApplicationController
 
   def attending
     @user = current_user
+    @events = {}
+    @user.courses.each do |course|
+      @events[course.id] = []
+    end
+    @user.courses.each do |course|
+      @user.rsvps.attending.each do |rsvp|
+        event = rsvp.event
+        if event.courses.pluck(:id).include?(course.id)
+          @events[course.id] += [event]
+        end
+      end
+    end
   end
 
 end

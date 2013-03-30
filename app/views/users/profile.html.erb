@@ -4,7 +4,7 @@
     <h5>You haven't added any courses. Add some <%= link_to 'here.', '/add_courses' %></h5>
   <% end %>
 
-  <% @user.courses.each do |course| %>
+  <% @user.courses.ordered.each do |course| %>
     <h5><%= course.title_name %></h5>
     <div class="blue_bar"></div>
 

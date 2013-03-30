@@ -3,6 +3,9 @@
     <ul class="small-block-grid-2">
       <li class="event_li_box">
         <div class="vertical_gold_bar"></div>
+        <% if event.start_time.to_date > Date.today + 1.day %>
+          <%= event.start_time_formatted %>
+        <% end %>
         <%= event.start_formatted_time %>
       </li>
       <li>
