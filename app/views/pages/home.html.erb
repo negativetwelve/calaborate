@@ -1,7 +1,7 @@
 <div id="start">
   <% if current_user %>
 
-    <h4><%= image_tag("logo_large.png", size: '50x50') %> I want to...</h4>
+    <h4><%= image_tag("logo_large.png", size: '75x75') %></h4>
     <div class="row">
       <div class="large-12 columns center">
           <%= link_to "Suggested Events", suggested_path, class: 'button secondary cal-blue fixed-width' %><br>
@@ -14,7 +14,7 @@
 
     <form action="<%= events_path %>" method="get" >
       <div class="input-append">
-        <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field", placeholder: "Search by class or event (i.e, CS170)" %>  
+        <%= text_field_tag :q, params[:q], autofocus: "autofocus", id: "search_field", placeholder: "Search by class or event" %>  
         <%= submit_tag "Search", name: nil, class: 'btn search_button' %>
       </div>
     </form>
