@@ -3,7 +3,7 @@ development:
   encoding: unicode
   host: localhost
   database: calaborate_development
-  username: mark
+  username: brittanycheng
   password: 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -29,5 +29,5 @@ test:
   encoding: unicode
   host: localhost
   database: calaborate_test<%= ENV['TEST_ENV_NUMBER'] %>
-  username: mark
+  username: brittanycheng
   password: 
