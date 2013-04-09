@@ -30,11 +30,14 @@ form {
 }
 
 .button.secondary.cal-blue.search_button {
+  margin-left: 1%;
   height: 32px;
   line-height: 0.5;
-  -webkit-border-radius: 0px 0 0 0px;
-  -moz-border-radius: 0px 0 0 0px;
-  border-radius: 0px 0 0 0px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: none; 
+  box-shadow: none;
 }
 
 #search_field {
@@ -75,6 +78,14 @@ form {
   width: 100%;
 }
 
+.button.secondary {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: none; 
+  box-shadow: none;
+}
+
 .button.secondary.cal-blue {
   background-color: #1C92F4;
   border-color: #1C92F4;
@@ -87,7 +98,8 @@ form {
 }
 
 .button.secondary.fixed-width {
-  width: 200px;
+  width: 250px;
+  font-size: 1.1em;
 }
 
 .button.secondary.fixed-width-medium {
@@ -107,10 +119,10 @@ form {
 
 header .breadcrumb {
   background-color: #1C92F4;
+  ext-align: center;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
-  border-radius: 0px;
-  text-align: center;
+  border-radius: 0px; 
 }
 
 header .breadcrumb a {
