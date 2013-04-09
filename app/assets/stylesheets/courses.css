@@ -6,6 +6,10 @@
   color: #888888;
 }
 
+.course_name {
+  margin-bottom: 0.8px;
+}
+
 form {
   margin: 0;
 }
@@ -99,7 +103,6 @@ form {
 
 .button.secondary.fixed-width {
   width: 250px;
-  font-size: 1.1em;
 }
 
 .button.secondary.fixed-width-medium {

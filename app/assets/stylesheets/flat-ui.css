@@ -177,7 +177,7 @@
 
 body {
   color: #34495e;
-  font: 14px/1.231 "Lato", sans-serif; }
+  font: 16px/1.231 "Lato", sans-serif; }
 
 a {
   color: #1abc9c;
@@ -211,7 +211,7 @@ h3 {
 
 h4 {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 1000;
   margin-top: 4px;
   font-family: "Lato", sans-serif; }
 
@@ -219,7 +219,8 @@ h5 {
   font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  margin-top: 5%; }
 
 h6 {
   font-size: 13px;
